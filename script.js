@@ -1,7 +1,6 @@
 const form = document.getElementById("form");
-
+console.log(form.elements["submit"]);
 form.elements["submit"].addEventListener("click", function () {
-    let filename = form.elements["ID"].value + form.elements["Name"].value + ".txt";
     var currentdate = new Date();
     var datetime =
         "Date & Time: " +
@@ -16,6 +15,7 @@ form.elements["submit"].addEventListener("click", function () {
         currentdate.getMinutes() +
         ":" +
         currentdate.getSeconds();
+    console.log(datetime);
     download(
         datetime,
         form.elements["Name"].value.replace(/\s+/g, "") +
